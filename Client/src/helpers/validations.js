@@ -8,9 +8,9 @@ export function validar(input) {
       errors.email = "El email no es válido";
     }
   
-    if (input.email.length === 0) {
-      errors.email = "Este campo no puede estar vacío"  ;
-    }
+    // if (input.email.length === 0) {
+    //   errors.email = "Este campo no puede estar vacío"  ;
+    // }
   
     if (input.email.length > 35) {
       errors.email = "El email no puede tener más de 35 caracteres";
@@ -21,7 +21,7 @@ export function validar(input) {
       errors.password = "La contraseña debe contener al menos un número";
     }
   
-    if (input.password.length < 6 || input.password.length > 10) {
+    if (input.password.length < 6 || input.password.length < 10) {
       errors.password = "La contraseña debe tener entre 6 y 10 caracteres";
     }
   

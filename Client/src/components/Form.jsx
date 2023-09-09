@@ -30,7 +30,7 @@ function handleSumbit(event) {
 
 
     return (
-      <form >
+      <form onSubmit={handleSumbit}>
         <label>
             <input type="email" name="email" placeholder="Email..."  onChange={handleChange} />
         </label>
@@ -42,6 +42,7 @@ function handleSumbit(event) {
         {errors.email || errors.password ? null :(
         <button type="sumbit" onClick={handleSumbit}>Submit</button>
         )};
+        
       </form>
     );
   }

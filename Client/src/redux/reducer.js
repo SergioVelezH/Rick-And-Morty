@@ -10,21 +10,35 @@ const rootReducer = (state = initialState, actions)=>{
     let {type, payload} = actions;
 
     switch(type){
-        case ADD_FAV:
-            return{
-                ...state,
-                myFavorites: [...state.myFavorites,payload],
-                allCharacters: [...state.myFavorites,payload],
+        // case ADD_FAV:
+        //     return{
+        //         ...state,
+        //         myFavorites: [...state.myFavorites,payload],
+        //         allCharacters: [...state.myFavorites,payload],
 
+        //     };
+        case ADD_FAV:
+            return { 
+                ...state, 
+                myFavorites: payload, allCharacters: payload 
+                
             };
-        case REMOVE_FAV:
+        // case REMOVE_FAV:
         
-            let filterList = state.myFavorites.filter((element) => element.id !== Number(payload))
-            return{
-                ...state,
-                myFavorites:filterList, 
+        //     let filterList = state.myFavorites.filter((element) => element.id !== Number(payload))
+        //     return{
+        //         ...state,
+        //         myFavorites:filterList, 
                     
-            };    
+        //     };   
+        
+        case REMOVE_FAV:
+            return { 
+                ...state, 
+                myFavorites: payload,
+                 
+            };
+
         case FILTER_CARDS:
             return{
                 ...state,
